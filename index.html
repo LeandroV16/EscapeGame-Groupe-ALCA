@@ -39,7 +39,61 @@
           var oAudio = $('<audio autoplay> <source src="' + Pfile + '"></audio>')
           $('body').append(oAudio)
         } //fin Fplay
+         // FstopZIK
+        let FstopZIK = function () {
+          // Début fonction FstopZIK
+$('#idBTzik').remove()
+$('#idZIK').remove()
 
+
+        } //fin FstopZIK
+
+        // FcontinueZIK
+        let FcontinueZIK = function () { // Début fonction FcontinueZIK
+          let oAudio = $('#idZIK')
+          let jsAudio = oAudio[0]
+          jsAudio.play()
+          $('#idBTzik').remove()
+          let oBT = $('<button id="idBTzik">Pause</button>')
+          $('body').append(oBT)
+          oBT.on('click', FpauseZIK)
+
+
+
+
+
+
+
+        } //fin FcontinueZIK
+
+        // FpauseZIK
+        let FpauseZIK = function () { // Début fonction FplayZIK
+          let oAudio = $('#idZIK')
+          let jsAudio = oAudio[0]
+          jsAudio.pause()
+          $('#idBTzik').remove()
+          let oBT = $('<button id="idBTzik">Continue</button>')
+          $('body').append(oBT)
+          oBT.on('click', FcontinueZIK)
+          
+        } //fin FpauseZIK
+
+
+        // FplayZIK
+        let FplayZIK = function () { // Début fonction FplayZIK
+          let oAudio = $('<audio autoplay loop id="idZIK"><source src="zikFond.mp3"></audio>')
+          $('body').append(oAudio)
+          $('#idBTzik').remove()
+          let oBT = $('<button id="idBTzik">Pause</button>')
+          $('body').append(oBT)
+          oBT.on('click', FpauseZIK)
+        } //fin FplayZIK
+
+// Configuration par défaut pour TOUTES les scènes
+let Taille = {
+  width: 600,
+  height: 600
+};
         let Fscene8b = function () { // Début Fscene8b
           // Stopper précedents sons
           Fstop()
@@ -87,7 +141,8 @@
           oOption = {
             buttons: oBouton,
             title: 'Action !',
-            show: { effect: 'blind' }
+            show: { effect: 'blind' },
+             Taille
           }
 
           $(shtml).dialog(oOption)
