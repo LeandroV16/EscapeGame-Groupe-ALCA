@@ -1,0 +1,333 @@
+{
+  "meta": {
+    "title": "Psy'hopital",
+    "author": "",
+    "description": ""
+  },
+  "bible": {
+    "genre": "",
+    "tone": "",
+    "setting": "",
+    "characters": [],
+    "authorNotes": ""
+  },
+  "start": "start",
+  "nodes": {
+    "start": {
+      "text": "Contexte : opération pr petite blessure et on te propose de la morphine.",
+      "choices": [
+        {
+          "text": "Choix 1",
+          "next": "n_mpk48ao"
+        }
+      ]
+    },
+    "n_mpk48ao": {
+      "text": "Accepter la morphine ?",
+      "choices": [
+        {
+          "text": "Refuse",
+          "next": "n_hmhp9v1"
+        },
+        {
+          "text": "Accepte",
+          "next": "n_y55cyzb"
+        }
+      ],
+      "label": "Choix 1"
+    },
+    "n_hmhp9v1": {
+      "text": "Le jeu se termine après une opération normal + on rentre chez soit.",
+      "choices": [],
+      "label": "Refuse"
+    },
+    "n_y55cyzb": {
+      "text": "Réveille après blackout dans une chambre délabré.",
+      "choices": [
+        {
+          "text": "Choix 2",
+          "next": "n_felw8s2"
+        }
+      ],
+      "label": "Accepte"
+    },
+    "n_felw8s2": {
+      "text": "Analyser la pièce \nOU\n sortir de la chambre et essayer de comprendre où on est",
+      "choices": [
+        {
+          "text": "Analyser la pièce ",
+          "next": "n_ngiw77t"
+        },
+        {
+          "text": " sortir de la chambre et essayer de comprendre où on est",
+          "next": "n_ndvbqp7"
+        }
+      ],
+      "label": "Choix 2"
+    },
+    "n_ndvbqp7": {
+      "text": " sortir de la chambre et essayer de comprendre où on est",
+      "choices": [
+        {
+          "text": "",
+          "next": "n_lcf5j3r"
+        }
+      ],
+      "label": "Sortir"
+    },
+    "n_ngiw77t": {
+      "text": "Choix :\n-vérifier la lueur brillante sous l'armoire\n-Aller voir la table de chevet",
+      "choices": [
+        {
+          "text": "vérifier la lueur brillante sous l'armoire",
+          "next": "n_j8f019o"
+        },
+        {
+          "text": "Aller voir la table de chevet",
+          "next": "n_k7ttdgp"
+        },
+        {
+          "text": "Faire demi tour et sortir",
+          "next": "n_lcf5j3r"
+        }
+      ],
+      "label": "Analyse/choix"
+    },
+    "n_j8f019o": {
+      "text": "Trouve clef",
+      "choices": [
+        {
+          "text": "Sortir de la chambre",
+          "next": "n_lcf5j3r"
+        }
+      ],
+      "label": "Armoire"
+    },
+    "n_k7ttdgp": {
+      "text": "Trouve scalpel",
+      "choices": [
+        {
+          "text": "Sortir de la chambre",
+          "next": "n_lcf5j3r"
+        }
+      ],
+      "label": "Table de chevet"
+    },
+    "n_lcf5j3r": {
+      "text": "Se retrouve dans un long couloir blanc et délabré",
+      "choices": [
+        {
+          "text": "Choix 4",
+          "next": "n_h95oieq"
+        }
+      ],
+      "label": "Sort"
+    },
+    "n_h95oieq": {
+      "text": "Le couloir se sépare en deux ",
+      "choices": [
+        {
+          "text": "Gauche",
+          "next": "n_7cnyajj"
+        },
+        {
+          "text": "Droite",
+          "next": "n_mgjufj9"
+        }
+      ],
+      "label": "Choix 3"
+    },
+    "n_7cnyajj": {
+      "text": "Le joueur se retrouve dans un long couloir vide avec des casiers sur le mur. On entend des bruits bizarres/inhumains qui accélèrent derrière lui. Un timer se met en place et il doit vite choisir entre :\n",
+      "choices": [
+        {
+          "text": "Se cacher dans un casier",
+          "next": "n_v39smuu"
+        },
+        {
+          "text": "Se retourner et se battre (à condition d'avoir le scalpel)",
+          "next": "n_v39smuu"
+        },
+        {
+          "text": "Se retourner et se battre à mains nues",
+          "next": "n_4prztr1"
+        },
+        {
+          "text": "Fuir en courant",
+          "next": "n_4prztr1"
+        }
+      ],
+      "label": "Gauche"
+    },
+    "n_mgjufj9": {
+      "text": "on y voit un bureau avec un tiroir de dossiers entre-ouvert",
+      "choices": [
+        {
+          "text": "Y aller",
+          "next": "n_h2hk0nm"
+        }
+      ],
+      "label": "Droite"
+    },
+    "n_h2hk0nm": {
+      "text": "Farfouiller dans les dossiers\nObjectif : Trouver le dossier avec marqué « projet mutant » \nChronomètre : Trouver le bon dossier à temps parmi plusieurs dossiers (exemple 3 essais pour trouver le bon dossier parmi 5 ou 6, difficulté ajustable)\n+ on entend les bruits de pas du docteur qui arrive sur nous.\n",
+      "choices": [
+        {
+          "text": "Dossier pas trouver",
+          "next": "n_558s3eg"
+        },
+        {
+          "text": "Dossier trouver",
+          "next": "n_pq1efjy"
+        }
+      ],
+      "label": "Dans le bureau"
+    },
+    "n_558s3eg": {
+      "text": "Si on trouve pas le dossier à temps : le doc nous assomme et renvoi au début.",
+      "choices": [
+        {
+          "text": "Continuer",
+          "next": "n_y55cyzb"
+        }
+      ],
+      "label": "Attraper"
+    },
+    "n_pq1efjy": {
+      "text": "Si on trouve le dossier à temps alors afficher image du dossier + par ex un bout de la photo du monstre ",
+      "choices": [
+        {
+          "text": "Se cacher des bruits de pas qui arrivent",
+          "next": "n_woty0vc"
+        }
+      ],
+      "label": "Dossier trouver à temps"
+    },
+    "n_woty0vc": {
+      "text": "le joueur se cache du dr puis sors et aperçois des escaliers coller au bureau",
+      "choices": [
+        {
+          "text": "Fait demi tour",
+          "next": "n_h95oieq"
+        },
+        {
+          "text": "Prendre les marches du haut",
+          "next": "n_6i6iqjg"
+        },
+        {
+          "text": "Prendre les marches du bas",
+          "next": "n_y9pgyid"
+        }
+      ],
+      "label": "le joueur se cache du dr"
+    },
+    "n_v39smuu": {
+      "text": "Une fois le monstre parti, le joueur a le choix entre : ",
+      "choices": [
+        {
+          "text": "rentrer dans une des pièces dans le couloir qui mène à un laboratoire d’expérience chimique (recherche d’un remède)",
+          "next": "n_zt2rko8"
+        },
+        {
+          "text": "Aller voir la porte au bout du couloir",
+          "next": "n_kohfq4t"
+        }
+      ],
+      "label": "Survit"
+    },
+    "n_4prztr1": {
+      "text": "Le joueur se fait tuer par le monstre et meurt",
+      "choices": [],
+      "label": "Mort"
+    },
+    "n_zt2rko8": {
+      "text": "Le joueur arrive dans une salle de labo",
+      "choices": [],
+      "label": "Laboratoir"
+    },
+    "n_kohfq4t": {
+      "text": "Le joueur s'aperçoit que c’est une porte verrouillée menant à l'extérieur.\n",
+      "choices": [
+        {
+          "text": "(Condition clé) il dévérouille la porte et s'échappe",
+          "next": "n_3l4bict"
+        },
+        {
+          "text": " Appâter le monstre pour qu’il casse la porte",
+          "next": "n_ywprln0"
+        },
+        {
+          "text": "Faire demi tour",
+          "next": "n_h95oieq"
+        }
+      ],
+      "label": "Porte EXIT"
+    },
+    "n_3l4bict": {
+      "text": "Le joueur déverrouille la porte et s'enfuit pour de bon.",
+      "choices": [],
+      "label": "Fuite"
+    },
+    "n_ywprln0": {
+      "text": "Le joueur appelle le monstre, se met dos à la porte, et lorsque le monstre cours vers lui, il a quelques secondes pour décider entre :",
+      "choices": [
+        {
+          "text": "esquiver à gauche",
+          "next": "n_yuj20fs"
+        },
+        {
+          "text": "esquiver à droite",
+          "next": "n_yuj20fs"
+        },
+        {
+          "text": "esquiver en sautant par dessus le monstre",
+          "next": "n_yuj20fs"
+        },
+        {
+          "text": "esquiver en se baissant",
+          "next": "n_5vdflje"
+        }
+      ],
+      "label": "Attirer le monstre pour qu’il casse la porte"
+    },
+    "n_yuj20fs": {
+      "text": "Le joueur fini déchiquer par le monstre",
+      "choices": [],
+      "label": "Mort"
+    },
+    "n_5vdflje": {
+      "text": "Après avoir réussi à esquiver le monstre, le joueur se relève, le monstre à bizarrement disparu et voit la porte enfoncée juste assez pour que le joueur puisse s’y faufiler et s'enfuir pour de bon.",
+      "choices": [],
+      "label": "Esquive réussi"
+    },
+    "n_6i6iqjg": {
+      "text": "on tombe sur une pièce délabrée et on avance dedans pour l’observer. La porte se ferme dans un grand bruit, et le médecin nous pose un chiffon imbibé de chloroforme sur le nez et la bouche. Celui-ci nous a tendu un piège, et finit par nous opérer / utiliser comme cobaye pour ses expériences puis définitivement en monstre.",
+      "choices": [],
+      "label": "En haut"
+    },
+    "n_y9pgyid": {
+      "text": "on fait face à un ascenseur et à une porte métallique renforcé ouverte.",
+      "choices": [
+        {
+          "text": "Prendre l'ascenseur",
+          "next": "n_z6jidv9"
+        },
+        {
+          "text": "Aller dans la piece",
+          "next": "n_3afgrif"
+        }
+      ],
+      "label": "En bas"
+    },
+    "n_z6jidv9": {
+      "text": "",
+      "choices": [],
+      "label": "Prendre l'ascenseur"
+    },
+    "n_3afgrif": {
+      "text": "",
+      "choices": [],
+      "label": "Piece armurie"
+    }
+  }
+}
