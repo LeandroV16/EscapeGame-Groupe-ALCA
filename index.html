@@ -22,7 +22,6 @@
 
 <body>
 
-  <p><button id="idStop">Stop</button></p>
 
   <script>
     $(document).ready(
@@ -47,7 +46,7 @@
           let oAudio = $('<audio autoplay  id="idFX"> > <source src="' + Pfile + '"></audio>')
           $('body').append(oAudio)
         } //fin Fplay
-        let inventaire=null;
+        let inventaire = null;
         // FstopZIK
         let FstopZIK = function () {
           // Début fonction FstopZIK
@@ -92,6 +91,39 @@
         } //fin FplayZIK
 
         // Configuration par défaut pour TOUTES les scènes
+        let Fscene8a1 = function () {
+          // Stopper précedents sons
+          Fstop()
+          // Jouer son 
+          Fplay('splash.mp3')
+
+          let shtml = '<div>'
+          shtml += '<h3>Tu constates une pièce avec une porte qui semble fragile ainsi qu\'une porte en fer au bout du couloir<h3>'
+          shtml += '<hr/>'
+          shtml += '<center><img src="images.jpg"></center>'
+          shtml += '</div>'
+
+          if (inventaire = 'clé') {
+            oBouton = {
+              'essayer d\'ouvrir la porte': function () {$(this).on('dialogclose', FsceneFin).dialog('close').dialog('destroy').remove()},
+
+            }
+          }
+          else {
+            oBouton = {
+
+              'Quelque chose est derrière vous': function () {$(this).on('dialogclose', Fscene8a2).dialog('close').dialog('destroy').remove()},
+            }
+          }
+
+          oOption = {
+            buttons: oBouton,
+            title: 'Action !',
+            show: {effect: 'blind'},
+          }
+          oOption = {...oOption, ...Taille};
+          $(shtml).dialog(oOption)
+        }
 
         let Fscene8b = function () { // Début Fscene8b
           // Stopper précedents sons
@@ -115,11 +147,12 @@
             buttons: oBouton,
             title: 'Action !',
             show: {effect: 'blind'},
-            
+
           }
 
           $(shtml).dialog(oOption)
         }
+
         let Fscene8a = function () { // Début Fscene8a
           // Stopper précedents sons
           Fstop()
@@ -127,15 +160,16 @@
           Fplay('splash.mp3')
 
           let shtml = '<div>'
-          shtml += '<h3>Fin<h3>'
+          shtml += '<h3>Tu constates une pièce avec une porte qui semble fragile ainsi qu\'une porte en fer au bout du couloir<h3>'
           shtml += '<hr/>'
           shtml += '<center><img src="images.jpg"></center>'
           shtml += '</div>'
 
-          oBouton = {
-            // Bouton recommence
+          oBouton =
+          {
+            'aller dans la pièce': function () {$(this).on('dialogclose', Fscene8a1).dialog('close').dialog('destroy').remove()},
+            'aller inspecter la porte': function () {$(this).on('dialogclose', Fscene8a2).dialog('close').dialog('destroy').remove()},
 
-            'recommencer': function () {$(this).on('dialogclose', Fscene1).dialog('close').dialog('destroy').remove()}
           }
 
           oOption = {
@@ -143,7 +177,7 @@
             title: 'Action !',
             show: {effect: 'blind'},
           }
-oOption = { ...oOption, ...Taille };
+          oOption = {...oOption, ...Taille};
           $(shtml).dialog(oOption)
         }
 
@@ -171,7 +205,7 @@ oOption = { ...oOption, ...Taille };
             title: 'Action !',
             show: {effect: 'blind'},
           }
-oOption = { ...oOption, ...Taille };
+          oOption = {...oOption, ...Taille};
           $(shtml).dialog(oOption)
         }
         let Fscene6b = function () { // Début Fscene6b
@@ -179,7 +213,7 @@ oOption = { ...oOption, ...Taille };
           Fstop()
           // Jouer son 
           Fplay('son trouvaille.mp3')
-
+          inventaire = "scalpel"
           let shtml = '<div>'
           shtml += "<h3> Tu trouves un scalpel. Il pourrait t'être utile. <h3>"
           shtml += '<hr/>'
@@ -197,7 +231,7 @@ oOption = { ...oOption, ...Taille };
             title: 'Action !',
             show: {effect: 'blind'}
           }
-oOption = { ...oOption, ...Taille };
+          oOption = {...oOption, ...Taille};
           $(shtml).dialog(oOption)
         }
         let Fscene6a = function () { // Début Fscene6a
@@ -205,7 +239,7 @@ oOption = { ...oOption, ...Taille };
           Fstop()
           // Jouer son 
           Fplay('son trouvaille.mp3')
-
+          inventaire = "clé"
           let shtml = '<div>'
           shtml += "<h3> Tu trouves une clé. Elle pourrait t'être utile. <h3>"
           shtml += '<hr/>'
@@ -223,7 +257,7 @@ oOption = { ...oOption, ...Taille };
             title: 'Action !',
             show: {effect: 'blind'}
           }
-oOption = { ...oOption, ...Taille };
+          oOption = {...oOption, ...Taille};
           $(shtml).dialog(oOption)
         }
         // Fscene5a
@@ -248,9 +282,9 @@ oOption = { ...oOption, ...Taille };
             buttons: oBouton,
             title: 'Action !',
             show: {effect: 'blind'},
-         
+
           }
-oOption = { ...oOption, ...Taille };
+          oOption = {...oOption, ...Taille};
           $(shtml).dialog(oOption)
         }
 
@@ -277,7 +311,7 @@ oOption = { ...oOption, ...Taille };
             title: 'Action !',
             show: {effect: 'blind'},
           }
-oOption = { ...oOption, ...Taille };
+          oOption = {...oOption, ...Taille};
           $(shtml).dialog(oOption)
         }
 
@@ -293,19 +327,35 @@ oOption = { ...oOption, ...Taille };
           shtml += '<center><img src="scene1.jpg"></center>'
           shtml += '</div>'
 
+
+          let oBouton = [
+            {
+              text: "Oui",
+              click: function () {$(this).on('dialogclose', Fscene4).dialog('close').dialog('destroy').remove()},
+              classes: {"ui-dialog": "custom-red"}
+            },
+            {
+              text: "Non",
+              click: function () {$(this).on('dialogclose', Fscene8a).dialog('close').dialog('destroy').remove()},
+              classes: {"ui-dialog": "highlight"}
+            }
+          ]
+
+          /*
           oBouton = {
 
             'Oui': function () {$(this).on('dialogclose', Fscene4).dialog('close').dialog('destroy').remove()},
             'Non': function () {$(this).on('dialogclose', Fscene8a).dialog('close').dialog('destroy').remove()}
           }
+          */
 
           oOption = {
             buttons: oBouton,
             title: 'Action !',
             show: {effect: 'blind'},
-           
+
           }
-oOption = { ...oOption, ...Taille };
+          oOption = {...oOption, ...Taille};
           $(shtml).dialog(oOption)
         }
 
@@ -329,20 +379,46 @@ oOption = { ...oOption, ...Taille };
             buttons: oBouton,
             title: "Psyc'hospital",
             show: {effect: 'blind'},
-           
+
           }
-oOption = { ...oOption, ...Taille };
+          oOption = {...oOption, ...Taille};
           $(shtml).dialog(oOption)
         }// fin Fscene1
 
 
         // Fin de la Fscene2
+        let FsceneFin = function () {
+          // Stopper le son 
+          Fstop()
 
+
+          let shtml = '<div>'
+          shtml += '<h3>Game Over</h3>'
+          shtml += '<hr/>'
+          shtml += '<center><img src="intro.jpg"></center>'
+          shtml += '</div>'
+
+          oBouton = {
+            'Recommencer': function () {$(this).on('dialogclose', Fscene1).dialog('close').dialog('destroy').remove()},
+
+          }
+
+          let oOption = {
+            buttons: oBouton,
+            title: "Psyc'hospital",
+            show: {effect: 'blind'},
+          }
+
+          oOption = {...oOption, ...Taille};
+
+          $(shtml).dialog(oOption)
+        }
         // Debut de Fscene1 
         let Fscene1 = function () { // début Fscene1
           // Stopper le son 
           Fstop()
           FstopZIK()
+          inventaire = null;
           let shtml = '<div>'
           shtml += '<h3>Jeu réalisé par ALCA</h3>'
           shtml += '<hr/>'
@@ -360,7 +436,7 @@ oOption = { ...oOption, ...Taille };
             show: {effect: 'blind'},
           }
 
-          oOption = { ...oOption, ...Taille };
+          oOption = {...oOption, ...Taille};
 
           $(shtml).dialog(oOption)
         }// fin Fscene1
