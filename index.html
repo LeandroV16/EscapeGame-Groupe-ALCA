@@ -184,7 +184,7 @@
           Fplay('son trouvaille.mp3')
 
           let shtml = '<div>'
-          shtml += '<h3>Départ<h3>'
+          shtml += "<h3> Tu trouves un scalpel. Il pourrait t'être utile. <h3>"
           shtml += '<hr/>'
           shtml += '<center><img src="scalpel.jpg"></center>'
           shtml += '</div>'
@@ -210,7 +210,7 @@
           Fplay('son trouvaille.mp3')
 
           let shtml = '<div>'
-          shtml += '<h3>Départ<h3>'
+          shtml += "<h3> Tu trouves une clé. Elle pourrait t'être utile. <h3>"
           shtml += '<hr/>'
           shtml += '<center><img src="clé.jpg"></center>'
           shtml += '</div>'
@@ -328,7 +328,7 @@
           shtml += '</div>'
 
           oBouton = {
-            'Départ': function () {$(this).on('dialogclose', Fscene3).dialog('close').dialog('destroy').remove()},
+            'Continuer': function () {$(this).on('dialogclose', Fscene3).dialog('close').dialog('destroy').remove()},
 
           }
 
