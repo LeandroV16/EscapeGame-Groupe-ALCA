@@ -47,7 +47,7 @@
           let oAudio = $('<audio autoplay  id="idFX"> > <source src="' + Pfile + '"></audio>')
           $('body').append(oAudio)
         } //fin Fplay
-        
+        let inventaire=null;
         // FstopZIK
         let FstopZIK = function () {
           // Début fonction FstopZIK
@@ -142,9 +142,8 @@
             buttons: oBouton,
             title: 'Action !',
             show: {effect: 'blind'},
-            Taille
           }
-
+oOption = { ...oOption, ...Taille };
           $(shtml).dialog(oOption)
         }
 
@@ -171,10 +170,8 @@
             buttons: oBouton,
             title: 'Action !',
             show: {effect: 'blind'},
-            width: 600,
-            height: 600
           }
-
+oOption = { ...oOption, ...Taille };
           $(shtml).dialog(oOption)
         }
         let Fscene6b = function () { // Début Fscene6b
@@ -200,7 +197,7 @@
             title: 'Action !',
             show: {effect: 'blind'}
           }
-
+oOption = { ...oOption, ...Taille };
           $(shtml).dialog(oOption)
         }
         let Fscene6a = function () { // Début Fscene6a
@@ -226,7 +223,7 @@
             title: 'Action !',
             show: {effect: 'blind'}
           }
-
+oOption = { ...oOption, ...Taille };
           $(shtml).dialog(oOption)
         }
         // Fscene5a
@@ -251,10 +248,9 @@
             buttons: oBouton,
             title: 'Action !',
             show: {effect: 'blind'},
-            width: 600,
-            height: 600
+         
           }
-
+oOption = { ...oOption, ...Taille };
           $(shtml).dialog(oOption)
         }
 
@@ -280,10 +276,8 @@
             buttons: oBouton,
             title: 'Action !',
             show: {effect: 'blind'},
-            width: 600,
-            height: 600
           }
-
+oOption = { ...oOption, ...Taille };
           $(shtml).dialog(oOption)
         }
 
@@ -309,10 +303,9 @@
             buttons: oBouton,
             title: 'Action !',
             show: {effect: 'blind'},
-            width: 600,
-            height: 600
+           
           }
-
+oOption = { ...oOption, ...Taille };
           $(shtml).dialog(oOption)
         }
 
@@ -336,10 +329,9 @@
             buttons: oBouton,
             title: "Psyc'hospital",
             show: {effect: 'blind'},
-            width: 600,
-            height: 600
+           
           }
-
+oOption = { ...oOption, ...Taille };
           $(shtml).dialog(oOption)
         }// fin Fscene1
 
