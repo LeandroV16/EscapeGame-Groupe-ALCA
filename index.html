@@ -12,7 +12,8 @@
 
   <!-- adapter le thème choisir :  -->
   <link rel="stylesheet" href="https://unpkg.com/jquery-ui/dist/themes/ui-darkness/jquery-ui.min.css">
-
+  <link rel="preload" href="son background.mp3" as="audio" type="audio/mpeg" fetchpriority="high">
+  <link rel="preload" href="background .jpg" as="image" type="image/jpeg" fetchpriority="high">
   <!-- ajouter balise de style -->
   <link rel="stylesheet" href="style.css">
 
@@ -43,8 +44,8 @@
 
         // Fplay
         let Fplay = function (Pfile) {
-          let oAudio = $('<audio autoplay > <source src="' + Pfile + '"></audio>')
-          $('body').append(oAudio)
+          let oAudio = $('<audio autoplay  id="idFX"> > <source src="' + Pfile + '"></audio>')
+          $('#idFX').append(oAudio)
         } //fin Fplay
         
         // FstopZIK
