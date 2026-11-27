@@ -45,7 +45,7 @@
         // Fplay
         let Fplay = function (Pfile) {
           let oAudio = $('<audio autoplay  id="idFX"> > <source src="' + Pfile + '"></audio>')
-          $('#idFX').append(oAudio)
+          $('body').append(oAudio)
         } //fin Fplay
         
         // FstopZIK
@@ -67,11 +67,6 @@
           oBT.on('click', FpauseZIK)
 
 
-
-
-
-
-
         } //fin FcontinueZIK
 
         // FpauseZIK
@@ -85,8 +80,6 @@
           oBT.on('click', FcontinueZIK)
 
         } //fin FpauseZIK
-
-
 
         // FplayZIK
         let FplayZIK = function () { // Début fonction FplayZIK
