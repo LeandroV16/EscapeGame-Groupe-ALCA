@@ -39,12 +39,11 @@
           var oAudio = $('<audio autoplay> <source src="' + Pfile + '"></audio>')
           $('body').append(oAudio)
         } //fin Fplay
-         // FstopZIK
+        // FstopZIK
         let FstopZIK = function () {
           // Début fonction FstopZIK
-$('#idBTzik').remove()
-$('#idZIK').remove()
-
+          $('#idBTzik').remove()
+          $('#idZIK').remove()
 
         } //fin FstopZIK
 
@@ -79,6 +78,7 @@ $('#idZIK').remove()
         } //fin FpauseZIK
 
 
+
         // FplayZIK
         let FplayZIK = function () { // Début fonction FplayZIK
           let oAudio = $('<audio autoplay loop id="idZIK"><source src="son background.mp3"></audio>')
@@ -89,11 +89,11 @@ $('#idZIK').remove()
           oBT.on('click', FpauseZIK)
         } //fin FplayZIK
 
-// Configuration par défaut pour TOUTES les scènes
-let Taille = {
-  width: 600,
-  height: 600
-};
+        // Configuration par défaut pour TOUTES les scènes
+        let Taille = {
+          width: 600,
+          height: 600
+        };
         let Fscene8b = function () { // Début Fscene8b
           // Stopper précedents sons
           Fstop()
@@ -109,13 +109,13 @@ let Taille = {
           oBouton = {
             // Bouton recommence
 
-            'recommencer': function () { $(this).on('dialogclose', Fscene1).dialog('close').dialog('destroy').remove() }
+            'recommencer': function () {$(this).on('dialogclose', Fscene1).dialog('close').dialog('destroy').remove()}
           }
 
           oOption = {
             buttons: oBouton,
             title: 'Action !',
-            show: { effect: 'blind' }
+            show: {effect: 'blind'}
           }
 
           $(shtml).dialog(oOption)
@@ -135,14 +135,14 @@ let Taille = {
           oBouton = {
             // Bouton recommence
 
-            'recommencer': function () { $(this).on('dialogclose', Fscene1).dialog('close').dialog('destroy').remove() }
+            'recommencer': function () {$(this).on('dialogclose', Fscene1).dialog('close').dialog('destroy').remove()}
           }
 
           oOption = {
             buttons: oBouton,
             title: 'Action !',
-            show: { effect: 'blind' },
-             Taille
+            show: {effect: 'blind'},
+            Taille
           }
 
           $(shtml).dialog(oOption)
@@ -163,14 +163,14 @@ let Taille = {
 
           oBouton = {
 
-            'Se diriger vers la gauche': function () { $(this).on('dialogclose', Fscene8a).dialog('close').dialog('destroy').remove() },
-            'Aller à droite vers la porte entrebâillée': function () { $(this).on('dialogclose', Fscene8b).dialog('close').dialog('destroy').remove() },
+            'Se diriger vers la gauche': function () {$(this).on('dialogclose', Fscene8a).dialog('close').dialog('destroy').remove()},
+            'Aller à droite vers la porte entrebâillée': function () {$(this).on('dialogclose', Fscene8b).dialog('close').dialog('destroy').remove()},
           }
 
           oOption = {
             buttons: oBouton,
             title: 'Action !',
-            show: { effect: 'blind' },
+            show: {effect: 'blind'},
             width: 600,
             height: 600
           }
@@ -192,13 +192,13 @@ let Taille = {
           oBouton = {
             // Bouton recommence
 
-            'Sortir de la chambre': function () { $(this).on('dialogclose', Fscene7).dialog('close').dialog('destroy').remove() }
+            'Sortir de la chambre': function () {$(this).on('dialogclose', Fscene7).dialog('close').dialog('destroy').remove()}
           }
 
           oOption = {
             buttons: oBouton,
             title: 'Action !',
-            show: { effect: 'blind' }
+            show: {effect: 'blind'}
           }
 
           $(shtml).dialog(oOption)
@@ -218,13 +218,13 @@ let Taille = {
           oBouton = {
             // Bouton recommence
 
-            'Sortir de la chambre': function () { $(this).on('dialogclose', Fscene7).dialog('close').dialog('destroy').remove() }
+            'Sortir de la chambre': function () {$(this).on('dialogclose', Fscene7).dialog('close').dialog('destroy').remove()}
           }
 
           oOption = {
             buttons: oBouton,
             title: 'Action !',
-            show: { effect: 'blind' }
+            show: {effect: 'blind'}
           }
 
           $(shtml).dialog(oOption)
@@ -244,15 +244,15 @@ let Taille = {
 
           oBouton = {
 
-            'Vérifier la lueur brillante sous l\'armoire': function () { $(this).on('dialogclose', Fscene6a).dialog('close').dialog('destroy').remove() },
-            'Aller voir la table de chevet': function () { $(this).on('dialogclose', Fscene6b).dialog('close').dialog('destroy').remove() },
-            'S\'enfuir': function () { $(this).on('dialogclose', Fscene7).dialog('close').dialog('destroy').remove() },
+            'Vérifier la lueur brillante sous l\'armoire': function () {$(this).on('dialogclose', Fscene6a).dialog('close').dialog('destroy').remove()},
+            'Aller voir la table de chevet': function () {$(this).on('dialogclose', Fscene6b).dialog('close').dialog('destroy').remove()},
+            'S\'enfuir': function () {$(this).on('dialogclose', Fscene7).dialog('close').dialog('destroy').remove()},
           }
 
           oOption = {
             buttons: oBouton,
             title: 'Action !',
-            show: { effect: 'blind' },
+            show: {effect: 'blind'},
             width: 600,
             height: 600
           }
@@ -275,14 +275,14 @@ let Taille = {
 
           oBouton = {
 
-            'Fouiller la chambre': function () { $(this).on('dialogclose', Fscene5a).dialog('close').dialog('destroy').remove() },
-            'Sortir au plus vite': function () { $(this).on('dialogclose', Fscene7).dialog('close').dialog('destroy').remove() }
+            'Fouiller la chambre': function () {$(this).on('dialogclose', Fscene5a).dialog('close').dialog('destroy').remove()},
+            'Sortir au plus vite': function () {$(this).on('dialogclose', Fscene7).dialog('close').dialog('destroy').remove()}
           }
 
           oOption = {
             buttons: oBouton,
             title: 'Action !',
-            show: { effect: 'blind' },
+            show: {effect: 'blind'},
             width: 600,
             height: 600
           }
@@ -305,14 +305,14 @@ let Taille = {
 
           oBouton = {
 
-            'Oui': function () { $(this).on('dialogclose', Fscene4).dialog('close').dialog('destroy').remove() },
-            'Non': function () { $(this).on('dialogclose', Fscene8a).dialog('close').dialog('destroy').remove() }
+            'Oui': function () {$(this).on('dialogclose', Fscene4).dialog('close').dialog('destroy').remove()},
+            'Non': function () {$(this).on('dialogclose', Fscene8a).dialog('close').dialog('destroy').remove()}
           }
 
           oOption = {
             buttons: oBouton,
             title: 'Action !',
-            show: { effect: 'blind' },
+            show: {effect: 'blind'},
             width: 600,
             height: 600
           }
@@ -324,7 +324,7 @@ let Taille = {
         let Fscene2 = function () { // début Fscene2
           // Stopper le son 
           Fstop()
-
+          FplayZIK()
           var shtml = '<div>'
           shtml += " Tu te retrouves à l'hôpital après t'être cassé le poignet en réparant ton toît. Après de longues heures d'attente loin de chez toi, tu te retrouves enfin sur la table d'opération. Quelques minutes passent pendant lesquelles le médecin se prépare en silence, puis finalement s'approche de toi, une seringue à la main et te pose une question..."
           shtml += '<hr/>'
@@ -332,14 +332,14 @@ let Taille = {
           shtml += '</div>'
 
           oBouton = {
-            'Départ': function () { $(this).on('dialogclose', Fscene3).dialog('close').dialog('destroy').remove() },
+            'Départ': function () {$(this).on('dialogclose', Fscene3).dialog('close').dialog('destroy').remove()},
 
           }
 
           oOption = {
             buttons: oBouton,
             title: "Psyc'hospital",
-            show: { effect: 'blind' },
+            show: {effect: 'blind'},
             width: 600,
             height: 600
           }
@@ -354,7 +354,7 @@ let Taille = {
         let Fscene1 = function () { // début Fscene1
           // Stopper le son 
           Fstop()
-
+FstopZIK()
           var shtml = '<div>'
           shtml += '<h3>Jeu réalisé par ALCA</h3>'
           shtml += '<hr/>'
@@ -362,14 +362,14 @@ let Taille = {
           shtml += '</div>'
 
           oBouton = {
-            'Départ': function () { $(this).on('dialogclose', Fscene2).dialog('close').dialog('destroy').remove() },
+            'Départ': function () {$(this).on('dialogclose', Fscene2).dialog('close').dialog('destroy').remove()},
 
           }
 
           oOption = {
             buttons: oBouton,
             title: "Psyc'hospital",
-            show: { effect: 'blind' },
+            show: {effect: 'blind'},
             width: 600,
             height: 600
           }
